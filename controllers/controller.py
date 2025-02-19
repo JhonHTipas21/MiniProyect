@@ -2,37 +2,43 @@ import json
 import os
 from models.task import Task
 
-FILE_PATH = "tasks.json"
+TASKS_FILE = "tasks.json"
 
 class TaskController:
     def __init__(self):
-        self.tasks = self.load_tasks()
+        """Carga las tareas desde el archivo JSON al iniciar el controlador"""
+        self.tasks = []
+        self.load_tasks()
 
     def load_tasks(self):
-        if os.path.exists(FILE_PATH):
-            with open(FILE_PATH, "r") as file:
-                return [Task.from_dict(task) for task in json.load(file)]
-        return []
+        """Carga las tareas desde el archivo JSON si existe"""
+        if os.path.exists(TASKS_FILE):
+            with open(TASKS_FILE, "r") as file:
+                try:
+                    data = json.load(file)
+                    self.tasks = [Task.from_dict(t) for t in data]
+                except json.JSONDecodeError:
+                    self.tasks = []
+        else:
+            self.tasks = []
 
     def save_tasks(self):
-        with open(FILE_PATH, "w") as file:
+        """Guarda las tareas en el archivo JSON"""
+        with open(TASKS_FILE, "w") as file:
             json.dump([task.to_dict() for task in self.tasks], file, indent=4)
 
-    def add_task(self, task):
-        self.tasks.append(task)
+    def add_task(self, title, description, due_date, priority):
+        """Agrega una nueva tarea a la lista y la guarda"""
+        new_task = Task(title, description, due_date, priority)
+        self.tasks.append(new_task)
         self.save_tasks()
+
+    def remove_task(self, index):
+        """Elimina una tarea por índice"""
+        if 0 <= index < len(self.tasks):
+            del self.tasks[index]
+            self.save_tasks()
 
     def list_tasks(self):
+        """Devuelve la lista de tareas"""
         return self.tasks
-
-    def mark_completed(self, title):
-        for task in self.tasks:
-            if task.title == title:
-                task.completed = True
-                self.save_tasks()
-                return True
-        return False
-
-    def delete_task(self, title):
-        self.tasks = [task for task in self.tasks if task.title != title]
-        self.save_tasks()
