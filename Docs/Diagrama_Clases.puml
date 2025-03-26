@@ -1,0 +1,51 @@
+@startuml
+
+class Task {
+    - title: str
+    - description: str
+    - due_date: str
+    - priority: str
+    - status: str
+    + to_dict(): dict
+    + from_dict(): Task
+}
+
+class TaskController {
+    - tasks: list
+    + add_task(task: Task)
+    + remove_task(index: int)
+    + list_tasks(): list
+    + save_tasks()
+    + load_tasks()
+}
+
+class TaskApp {
+    - controller: TaskController
+    - title_input: QLineEdit
+    - desc_input: QLineEdit
+    - date_input: QLineEdit
+    - priority_input: QComboBox
+    - task_list: QListWidget
+    + add_task()
+    + edit_task()
+    + update_task()
+    + delete_task()
+    + update_task_list()
+}
+
+class Main {
+    + run_app()
+}
+
+class Tests {
+    + test_creacion_tarea()
+    + test_modificar_tarea()
+    + test_eliminar_tarea()
+}
+
+TaskController --> Task : "Administra (asociación)"
+TaskApp --> TaskController : "Usa (asociación)"
+Main --> TaskApp : "Ejecuta"
+Tests --> Task : "Prueba"
+
+@enduml
