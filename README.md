@@ -22,3 +22,5 @@ En la carpeta `Docs/` encontrarás documentación complementaria sobre la arquit
 
 - 📄 **Diagrama de Clases UML**: [`Docs/Diagrama_Clases.puml`](Docs/Diagrama_Clases.puml)
 - 📖 **Validación de Principios de POO**: [`Docs/Validacion_Principios_POO.md`](Docs/Validacion_Principios_POO.md)
+- 📄 **Principios SOLID en el proyecto**: [`Docs/Principios_SOLID.md`](Docs/Principios_SOLID.md)
+- 📖 **Revisión modularidad del proyecto**: [`Docs/Rev_Modularidad.md`](Docs/Rev_Modularidad.md)
