@@ -49,3 +49,11 @@ class Task:
         )
         task.status = data["status"]
         return task
+
+    def mark_as_completed(self):
+        """Marca la tarea como completada"""
+        self.status = "Completed"
+        
+    def is_completed(self):
+        """Verifica si la tarea está completada"""
+        return self.status == "Completed"

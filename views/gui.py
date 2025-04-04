@@ -72,13 +72,20 @@ class TaskApp(QWidget):
         self.delete_button.clicked.connect(self.delete_task)
         layout.addWidget(self.delete_button)
 
+        # Nuevo botón para marcar como completada
+        self.complete_button = QPushButton("Marcar como Completada", self)
+        self.complete_button.setStyleSheet(button_style + "background-color: #1976D2;")
+        self.complete_button.clicked.connect(self.complete_task)
+        layout.addWidget(self.complete_button)
+
         self.setLayout(layout)
 
     def update_task_list(self):
         """Actualiza la lista de tareas en la interfaz"""
         self.task_list.clear()
         for task in self.controller.list_tasks():
-            self.task_list.addItem(f"{task.title} - {task.priority} - {task.due_date} ({task.status})")
+            status = "✓" if task.is_completed() else task.status
+            self.task_list.addItem(f"{task.title} - {task.priority} - {task.due_date} ({status})")
 
     def add_task(self):
         """Añade una tarea desde la interfaz gráfica"""
@@ -130,6 +137,13 @@ class TaskApp(QWidget):
         selected_index = self.task_list.currentRow()
         if selected_index >= 0:
             self.controller.remove_task(selected_index)
+            self.update_task_list()
+
+    def complete_task(self):
+        """Marca la tarea seleccionada como completada"""
+        selected_index = self.task_list.currentRow()
+        if selected_index >= 0:
+            self.controller.complete_task(selected_index)
             self.update_task_list()
 
 def run_app():

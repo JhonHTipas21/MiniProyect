@@ -58,3 +58,9 @@ class TaskController:
     def list_tasks(self):
         """Devuelve la lista de tareas"""
         return self.tasks
+
+    def complete_task(self, index):
+        """Marca una tarea como completada"""
+        if 0 <= index < len(self.tasks):
+            self.tasks[index].mark_as_completed()
+            self.save_tasks()
