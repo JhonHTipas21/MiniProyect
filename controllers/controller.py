@@ -33,6 +33,22 @@ class TaskController:
         self.tasks.append(new_task)
         self.save_tasks()
 
+    def get_task(self, index):
+        """Obtiene una tarea específica por su índice"""
+        if 0 <= index < len(self.tasks):
+            return self.tasks[index]
+        return None
+
+    def update_task(self, index, title, description, due_date, priority):
+        """Actualiza una tarea existente con nuevos datos"""
+        if 0 <= index < len(self.tasks):
+            task = self.tasks[index]
+            task.title = title
+            task.description = description
+            task.due_date = due_date
+            task.priority = priority
+            self.save_tasks()
+
     def remove_task(self, index):
         """Elimina una tarea por índice"""
         if 0 <= index < len(self.tasks):
