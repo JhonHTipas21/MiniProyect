@@ -11,6 +11,9 @@ El código está organizado en diferentes módulos con responsabilidades bien de
 📂 **views/** → Maneja la interfaz gráfica.
 📂 **tests/** → Contiene pruebas automatizadas.
 📂 **Docs/** → Almacena documentación relevante y arquitectura del proyecto.
+📂 **ARQUITECTURA/** → Almacena documentación de la arquitectura del proyecto.
+📂 **Guia_Usuario_Instalacion/** → Almacena documentación de la guía para el usuario y la instalación y ejecución del proyecto.
+
 
 ## ✅ **Análisis de Modularidad**
 Se revisaron los archivos clave y sus dependencias:

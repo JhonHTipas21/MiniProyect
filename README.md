@@ -1,11 +1,12 @@
 # 📝 MiniProyecto - Gestor de Tareas
 
-## 🚀 Instalación  
-1️⃣ Clona este repositorio:  
-   ```bash
-   git clone https://github.com/JhonHTipas21/MiniProyect.git
-   cd MiniProyect
-   ```
+## 🚀 Guía de usuario e Instalación y ejecución  
+
+En la carpeta `Guia_Usuario_Instalacion`, encontraras toda la informacion respecto a la guia de usuario para el buen manejo del sistema y toda la informacion referente a la instalacion y ejecucion del sistema:
+
+- 📄 **Guía de usuario**: [`Guia_Usuario_Instalacion/GUIA_USUARIO.md`](Guia_Usuario_Instalacion/GUIA_USUARIO.md)
+- 📄 **Instalación y ejecución**: [`Guia_Usuario_Instalacion/INSTALACION_Y_EJECUCION.md`](Guia_Usuario_Instalacion/INSTALACION_Y_EJECUCION.md)
+
 
 Este es un **gestor de tareas** desarrollado en **Python**, que permite agregar, listar, completar y eliminar tareas.  
 
