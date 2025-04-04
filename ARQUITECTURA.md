@@ -28,17 +28,20 @@ La estructura del código está organizada en las siguientes carpetas y archivos
 
 ```
 MiniProyect/
-├── Docs/                 # Documentación del proyecto
-├── main.py               # Punto de entrada principal del programa
-├── controllers/          # Lógica de negocio y controladores
-├── task_controller.py    # Controlador para la gestión de tareas
-├── models/               # Modelos de datos
-│   ├── task.py           # Definición de la clase Task
-├── views/                # Interfaz de usuario
-│   ├── cli.py            # Interfaz de línea de comandos (CLI)
-├── tests/                # Pruebas unitarias
-│   ├── test_task.py      # Pruebas para la clase Task
-├── README.md             # Descripción general del proyecto
+├── Docs/                       # Documentación del proyecto
+├── Guia_Usuario_Instalacion/   # Guía de usuario e intalación y ejecución del proyecto
+├── main.py                     # Punto de entrada principal del programa
+├── controllers/                # Lógica de negocio y controladores
+├── task_controller.py          # Controlador para la gestión de tareas
+├── models/                     # Modelos de datos
+│   ├── task.py                 # Definición de la clase Task
+├── views/                      # Interfaz de usuario
+│   ├── cli.py                  # Interfaz de línea de comandos (CLI)
+├── tests/                      # Pruebas unitarias
+│   ├── test_task.py            # Pruebas para la clase Task
+├── ARQUITECTURA.md             # Descripción de la arquitectura del proyecto
+├── README.md                   # Descripción general del proyecto
+├── README_RULES.md             # Reglas primordiales para la generacion de codigo estetico y modular
 ```
 
 - **main.py**: Es el punto de entrada del programa, donde se inicia la ejecución del sistema.
@@ -64,6 +67,6 @@ MiniProyect/
 - **Python 3.x**: Lenguaje de programación principal.
 - **argparse**: Para la gestión de argumentos en la CLI.
 - **unittest**: Para realizar pruebas unitarias.
-- **Tkinter**: Para la interfaz gráfica.
+- **PyQt5**: Para la interfaz gráfica.
 - **SQLite**: Base de datos ligera y eficiente.
 
